@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style3.css" type="text/css"/>
+
+    <title>Сленги.рф</title>
+</head>
+<body>
+<form>
+	<input id="search" type="search" pattern=".*\S.*" required name=search autocomplete="off">
+
+    
+</form>
+
+<ul class="card_word">
+{% for p in posts %}
+    <li>
+        <p class='word' style="overflow: hidden; position: sticky;"><a href="/?search={{p.word}}"><h4>{{p.word}}</h4></a></p>
+        <p class='description'><h6>{{p.description[:100]}}...</h6></p>
+    </li>
+{% endfor %}
+</ul>
+
+<footer style="left: 50%; top: 99%; z-index: 100; position: fixed; transform: translate(-50%, -99%); text-decoration: none; cursor: pointer;"><a href="/api" class="api">API</a> / <a target="_blank" href="https://vk.com/matthew_mur" class='contact'>Контакты</a></footer>
+</body>
+</html>
