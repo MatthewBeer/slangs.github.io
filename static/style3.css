@@ -50,7 +50,7 @@ input {
     position: fixed;
 
     transition: all calc(var(--dur) * 0.5) linear;
-    background: var(--fg);
+    background: var(--input);
     border-radius: 0.25em;
     box-shadow: none;
     padding: 0.75em 1em;
@@ -89,11 +89,19 @@ footer {
     font-size: medium;
 }
 
+a.card {
+    color: var(--fg);
+}
+
 a.api:hover {
     color: var(--input)
 }
 
 a.contact:hover {
+    color: var(--input)
+}
+
+a.card:hover {
     color: var(--input)
 }
 

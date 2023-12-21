@@ -21,7 +21,7 @@ async def index():
     if request.method == 'GET':
         search = request.args.get('search')
         parser = reqparse.RequestParser()
-        parser.add_argument('search', type=str)
+        parser.add_argument('search', type=str, location='form')
         params = parser.parse_args()
 
         print(search)
@@ -46,7 +46,7 @@ async def index():
             if search == '':
                 
                 return render_template('search2.html', posts=posts)
-
+    
     return render_template('search.html')
     
 
@@ -58,7 +58,7 @@ async def slang_translator():
     
     if request.method == 'GET':
         parser = reqparse.RequestParser()
-        parser.add_argument('words', type=str)
+        parser.add_argument('words', type=str, location='form')
         params = parser.parse_args()
 
         if await Slang.get_or_none(word = str(params['words']).lower()) is not None:               
@@ -95,7 +95,7 @@ async def admin():
         login = request.form["text1"]
         password = request.form["text2"]
         print(login, password)
-        if login == "matvey.030205@mail.ru" and password == "mATVEY1@":
+        if login == "admin" and password == "admin":
             return redirect(url_for('admin_matvey'))
     return render_template('login.html')
         

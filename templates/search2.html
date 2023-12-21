@@ -18,7 +18,7 @@
 <ul class="card_word">
 {% for p in posts %}
     <li>
-        <p class='word' style="overflow: hidden; position: sticky;"><a href="/?search={{p.word}}"><h4>{{p.word}}</h4></a></p>
+        <p class='word' style="overflow: hidden; position: sticky;"><a href="/?search={{p.word}}" class="card"><h4>{{p.word}}</h4></a></p>
         <p class='description'><h6>{{p.description[:100]}}...</h6></p>
     </li>
 {% endfor %}
