@@ -77,7 +77,7 @@ async def slang_translator():
         params = parser.parse_args()
         
         if await Slang.get_or_none(word = str(params['words']).lower()) is not None:
-            if params['password'] == 'mATVEY1@':
+            if params['password'] == 'admin':
                 await Slang.create(word = str(params['words']).lower(), description = params['description'], type = params['type'])
                 return {"status":"Succeful"}, 200
             else:
